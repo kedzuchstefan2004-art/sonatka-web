@@ -2,61 +2,91 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer base {
+  * {
+    @apply m-0 p-0 box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 font-sans leading-relaxed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  h1 {
+    @apply text-5xl font-bold;
+  }
+
+  h2 {
+    @apply text-4xl font-bold;
+  }
+
+  h3 {
+    @apply text-3xl font-bold;
+  }
+
+  h4, h5, h6 {
+    @apply font-bold;
+  }
+
+  a {
+    @apply transition-colors duration-300;
+  }
+
+  button {
+    @apply transition-all duration-300;
+  }
+
+  input, textarea, select {
+    @apply transition-colors duration-300;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
-}
+@layer components {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+  }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9fafb;
-  color: #1f2937;
-  line-height: 1.6;
-}
+  .btn {
+    @apply px-4 py-2 rounded-lg font-semibold transition-all duration-300;
+  }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
-}
+  .btn-primary {
+    @apply btn bg-amber-600 text-white hover:bg-amber-700 active:scale-95;
+  }
 
-h1 {
-  font-size: 2.25rem;
-}
+  .btn-secondary {
+    @apply btn bg-gray-200 text-gray-900 hover:bg-gray-300 active:scale-95;
+  }
 
-h2 {
-  font-size: 1.875rem;
-}
+  .card {
+    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6;
+  }
 
-h3 {
-  font-size: 1.5rem;
-}
-
-a {
-  transition: color 0.3s ease;
-}
-
-button {
-  transition: all 0.3s ease;
+  .input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent;
+  }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  @apply w-2.5;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  @apply bg-gray-100;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 5px;
+  @apply bg-amber-600 rounded-full hover:bg-amber-700;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+/* Smooth transitions */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
