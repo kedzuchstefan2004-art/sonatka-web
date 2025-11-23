@@ -1,0 +1,17 @@
+{
+  "name": "Reštaurácia Sonáta",
+  "address": "Radničné námestie 4",
+  "city": "052 01 Spišská Nová Ves",
+  "phone": ["+421-53-44 111 82", "+421 918 627 699"],
+  "email": "sonatka@sonatka.sk",
+  "openingHours": {
+    "Pondelok - Piatok": "10:00 - 16:00",
+    "Sobota": "10:00 - 18:00",
+    "Nedeľa": "Zatvorené"
+  },
+  "capacity": {
+    "restaurant": 60,
+    "smokingLounge": 12,
+    "terrace": 24
+  }
+}

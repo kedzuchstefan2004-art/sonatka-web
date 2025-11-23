@@ -1,0 +1,355 @@
+[
+  {
+    "id": "p1",
+    "name": "Slepačí vývar s mäsom a rezancami (0,25l)",
+    "price": 2.60,
+    "allergens": ["1", "3", "9"],
+    "category": "Polievky"
+  },
+  {
+    "id": "p2",
+    "name": "Cesnačka so syrom (0,25l)",
+    "price": 2.60,
+    "allergens": ["1", "7", "9"],
+    "category": "Polievky"
+  },
+  {
+    "id": "p3",
+    "name": "Paradajkový krém so syrom (0,25l)",
+    "price": 3.40,
+    "allergens": ["1", "7"],
+    "category": "Polievky"
+  },
+  {
+    "id": "p4",
+    "name": "Dračí dych - pikantná čínska polievka s hubami shitake a krabími tyčinkami (0,25l)",
+    "price": 5.10,
+    "allergens": ["3", "4"],
+    "category": "Polievky"
+  },
+  {
+    "id": "p5",
+    "name": "Tekvicový krém Hokkaido s mandľovými lupeňmi (0,25l)",
+    "price": 4.30,
+    "allergens": ["8"],
+    "category": "Polievky"
+  },
+  {
+    "id": "p6",
+    "name": "Kačacia pečeň na cibuľke s jabĺčkami v zemiakovej lokši (80g)",
+    "price": 5.10,
+    "allergens": ["1"],
+    "category": "Predjedlá"
+  },
+  {
+    "id": "p7",
+    "name": "Mozzarella prekladaná rajčinami, bazalkou a sušenou šunkou prosciutto (100g)",
+    "price": 5.20,
+    "allergens": ["7"],
+    "category": "Predjedlá"
+  },
+  {
+    "id": "p8",
+    "name": "Gratinovaný mäsový toast (80g)",
+    "price": 5.90,
+    "allergens": ["1", "3", "7"],
+    "category": "Predjedlá"
+  },
+  {
+    "id": "p9",
+    "name": "Losos s pomarančom a bylinkovým maslom (150g)",
+    "price": 13.80,
+    "allergens": ["1", "4", "7"],
+    "category": "Ryby"
+  },
+  {
+    "id": "p10",
+    "name": "Grilovaný losos v bylinkovej kruste (150g)",
+    "price": 13.20,
+    "allergens": ["1", "4", "7"],
+    "category": "Ryby"
+  },
+  {
+    "id": "p11",
+    "name": "Medové kačacie prsia s grilovanou hruškou (150g)",
+    "price": 16.10,
+    "allergens": ["1"],
+    "category": "Kačacie špeciality"
+  },
+  {
+    "id": "p12",
+    "name": "Pečené kačacie prsia na hríboch a slaninke (150g)",
+    "price": 16.50,
+    "allergens": ["1"],
+    "category": "Kačacie špeciality"
+  },
+  {
+    "id": "p13",
+    "name": "Pečené kačacie stehno s medom, červená kapusta, žemľový knedlík (200-250g)",
+    "price": 18.60,
+    "allergens": ["1", "3", "7"],
+    "category": "Kačacie špeciality"
+  },
+  {
+    "id": "p14",
+    "name": "Plátky pečených kačacích pŕs na grilovanej zelenine (100g mäso + 150g zelenina)",
+    "price": 13.40,
+    "allergens": ["7"],
+    "category": "Kačacie špeciality"
+  },
+  {
+    "id": "p15",
+    "name": "Kurací steak s bylinkovým maslom (150g)",
+    "price": 7.70,
+    "allergens": ["1", "7"],
+    "category": "Kuracie jedlá"
+  },
+  {
+    "id": "p16",
+    "name": "Kuracie rezne vyprážané (150g)",
+    "price": 7.70,
+    "allergens": ["1", "3", "7"],
+    "category": "Kuracie jedlá"
+  },
+  {
+    "id": "p17",
+    "name": "Plátky pečených kuracích pŕs, krémové hríbikové rizoto s parmezánom (150g mäso + 200g rizoto)",
+    "price": 9.90,
+    "allergens": ["1", "7"],
+    "category": "Kuracie jedlá"
+  },
+  {
+    "id": "p18",
+    "name": "Bravčová panenka v bylinkovom obale (150g)",
+    "price": 12.20,
+    "allergens": ["1"],
+    "category": "Bravčové jedlá"
+  },
+  {
+    "id": "p19",
+    "name": "Pníčky z bravčovej panenky v šípkovej omáčke (150g)",
+    "price": 12.70,
+    "allergens": ["1"],
+    "category": "Bravčové jedlá"
+  },
+  {
+    "id": "p20",
+    "name": "Medailóniky z bravčovej panenky so zeleninou na pare (150g mäso + 100g zelenina)",
+    "price": 13.90,
+    "allergens": [],
+    "category": "Bravčové jedlá"
+  },
+  {
+    "id": "p21",
+    "name": "Pikantná pochúťka z bravčového mäsa (150g)",
+    "price": 9.40,
+    "allergens": ["1", "7", "8"],
+    "category": "Bravčové jedlá"
+  },
+  {
+    "id": "p22",
+    "name": "Steak na spôsob divokého západu (200g)",
+    "price": 25.90,
+    "allergens": [],
+    "category": "Hovädzie jedlá"
+  },
+  {
+    "id": "p23",
+    "name": "Hovädzie soté Stroganov (150g)",
+    "price": 19.40,
+    "allergens": ["1", "7"],
+    "category": "Hovädzie jedlá"
+  },
+  {
+    "id": "p24",
+    "name": "Levočská pochúťka (150g)",
+    "description": "Mini zemiakové placky prekladané plátkami z kuracích pŕs, bravčového karé a hovädzej sviečkovice",
+    "price": 12.20,
+    "allergens": ["1", "3"],
+    "category": "Miešané jedlá"
+  },
+  {
+    "id": "p25",
+    "name": "Soté NIVA (100g)",
+    "description": "Soté z kuracieho mäsa v smotanovej omáčke so šampiňónmi a syrom niva, 3 ks mini zemiakové placky, 1/2 porcie hranolky",
+    "price": 12.20,
+    "allergens": ["1", "3", "7"],
+    "category": "Miešané jedlá"
+  },
+  {
+    "id": "p26",
+    "name": "Mix grill (150g)",
+    "description": "Grilované plátky kuracích pŕs, bravčového karé a hovädzej sviečkovice, 1/2 porcie dusenej ryže a zemiakových hranolčekov",
+    "price": 14.60,
+    "allergens": ["1"],
+    "category": "Miešané jedlá"
+  },
+  {
+    "id": "p27",
+    "name": "Bryndzové pirohy so slaninkou a smotanou (280g)",
+    "price": 6.50,
+    "allergens": ["1", "3", "7"],
+    "category": "Cestoviny"
+  },
+  {
+    "id": "p28",
+    "name": "Penne s bazalkovým pestom, kuracím mäsom, sušenými rajčinami a parmezánom (250g)",
+    "price": 9.00,
+    "allergens": ["1", "3", "7"],
+    "category": "Cestoviny"
+  },
+  {
+    "id": "p29",
+    "name": "Bolonské tagliatelle s bravčovým mäsom, paradajkami a parmezánom (250g)",
+    "price": 11.00,
+    "allergens": ["1", "3", "7"],
+    "category": "Cestoviny"
+  },
+  {
+    "id": "p30",
+    "name": "Penne s cesnakom a maslom, kurací steak s bylinkami a bazalkou (250g)",
+    "price": 10.00,
+    "allergens": ["1", "3", "7"],
+    "category": "Cestoviny"
+  },
+  {
+    "id": "p31",
+    "name": "Zeleninový šalát s kuracím mäsom, jogurtovým dresingom, cesnaková bageta (250g)",
+    "price": 9.40,
+    "allergens": ["1", "7"],
+    "category": "Šaláty"
+  },
+  {
+    "id": "p32",
+    "name": "Šopský šalát so syrom Fetaky, cesnaková bageta (250g)",
+    "price": 8.50,
+    "allergens": ["1", "7"],
+    "category": "Šaláty"
+  },
+  {
+    "id": "p33",
+    "name": "Ľadový šalát s tuniakom, rukolou, paradajkami a dresingom, cesnaková bageta (250g)",
+    "price": 8.80,
+    "allergens": ["1", "4", "7"],
+    "category": "Šaláty"
+  },
+  {
+    "id": "p34",
+    "name": "Zeleninový šalát s vyprážanými kuracími stripsami a dresingom, cesnaková bageta (250g)",
+    "price": 11.00,
+    "allergens": ["1", "3", "7"],
+    "category": "Šaláty"
+  },
+  {
+    "id": "p35",
+    "name": "Palacinky so zmrzlinou a ovocím (2 ks)",
+    "price": 6.60,
+    "allergens": ["1", "3", "7", "8"],
+    "category": "Dezerty"
+  },
+  {
+    "id": "p36",
+    "name": "Palacinky s jahodami a šľahačkou (2 ks)",
+    "price": 5.30,
+    "allergens": ["1", "3", "7"],
+    "category": "Dezerty"
+  },
+  {
+    "id": "p37",
+    "name": "Ovocné knedle so strúhankou a maslom (250g)",
+    "price": 5.50,
+    "allergens": ["1", "3", "7"],
+    "category": "Dezerty"
+  },
+  {
+    "id": "p38",
+    "name": "Zemiakové hranolčeky (100g)",
+    "price": 2.60,
+    "allergens": [],
+    "category": "Prílohy"
+  },
+  {
+    "id": "p39",
+    "name": "Zemiakové krokety (100g)",
+    "price": 3.00,
+    "allergens": [],
+    "category": "Prílohy"
+  },
+  {
+    "id": "p40",
+    "name": "Zemiakové mesiačiky so šupkou (100g)",
+    "price": 3.00,
+    "allergens": [],
+    "category": "Prílohy"
+  },
+  {
+    "id": "p41",
+    "name": "Varené zemiaky (200g)",
+    "price": 2.20,
+    "allergens": ["7"],
+    "category": "Prílohy"
+  },
+  {
+    "id": "p42",
+    "name": "Opekané zemiaky (200g)",
+    "price": 2.20,
+    "allergens": [],
+    "category": "Prílohy"
+  },
+  {
+    "id": "p43",
+    "name": "Zemiaková lokša (1 ks)",
+    "price": 2.60,
+    "allergens": ["1"],
+    "category": "Prílohy"
+  },
+  {
+    "id": "p44",
+    "name": "Dusená ryža (150g)",
+    "price": 2.20,
+    "allergens": [],
+    "category": "Prílohy"
+  },
+  {
+    "id": "p45",
+    "name": "Zemiaková kaša (200g)",
+    "price": 2.60,
+    "allergens": ["7"],
+    "category": "Prílohy"
+  },
+  {
+    "id": "p46",
+    "name": "Karlovarský žemľový knedlík (150g)",
+    "price": 3.90,
+    "allergens": ["1", "3", "7"],
+    "category": "Prílohy"
+  },
+  {
+    "id": "p47",
+    "name": "Horčicovo-smotanová omáčka so zeleným korením (100g)",
+    "price": 2.60,
+    "allergens": ["1", "7", "10"],
+    "category": "Omáčky"
+  },
+  {
+    "id": "p48",
+    "name": "Brusnicová omáčka (100g)",
+    "price": 3.80,
+    "allergens": ["1"],
+    "category": "Omáčky"
+  },
+  {
+    "id": "p49",
+    "name": "Smotanovo-bylinková omáčka (100g)",
+    "price": 2.60,
+    "allergens": ["1", "7"],
+    "category": "Omáčky"
+  },
+  {
+    "id": "p50",
+    "name": "Hríbiková omáčka (100g)",
+    "price": 4.20,
+    "allergens": ["1"],
+    "category": "Omáčky"
+  }
+]

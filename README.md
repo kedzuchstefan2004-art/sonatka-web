@@ -1,36 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Reštaurácia Sonáta - Web Stránka
 
-## Getting Started
+Moderná webová stránka pre reštauráciu Sonáta v Spišskej Novej Vsi.
 
-First, run the development server:
+## 🎯 Funkcie
+
+- **Domovská stránka** - Predstavenie reštaurácie s hero fotkou
+- **Denné menu** - Dynamicky aktualizované denné menu s polievkami a jedlami
+- **Stála ponuka** - Kompletný katalóg jedál
+- **Galéria** - Fotografie z reštaurácie
+- **Rezervácie** - Formulár na rezerváciu stolov
+- **Kontakt** - Kontaktné informácie a mapa
+- **Admin panel** - Správa obsahu (denné menu, aktuality, rezervácie)
+- **Aktuality** - Popup s oznámami pre zákazníkov
+
+## 🛠️ Technológie
+
+- **Next.js 16** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **React** - UI library
+- **Lucide React** - Icons
+
+## 📋 Požiadavky
+
+- Node.js 18+
+- npm alebo yarn
+
+## 🚀 Inštalácia
 
 ```bash
+# Klonujte repozitár
+git clone https://github.com/vase-meno/sonatka-web.git
+cd sonatka-web
+
+# Nainštalujte dependencies
+npm install
+
+# Spustite dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Otvorte [http://localhost:3000](http://localhost:3000) v prehliadači.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Štruktúra projektu
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+sonatka-web/
+├── app/                    # Next.js app directory
+│   ├── page.tsx           # Domovská stránka
+│   ├── stala-ponuka/      # Stála ponuka
+│   ├── galeria/           # Galéria
+│   ├── rezervacia/        # Rezervácie
+│   ├── kontakt/           # Kontakt
+│   ├── admin/             # Admin panel
+│   └── api/               # API endpointy
+├── components/            # React komponenty
+├── data/                  # JSON dáta
+├── lib/                   # Utility funkcie
+└── public/                # Statické súbory
+```
 
-## Learn More
+## 🔧 Dostupné príkazy
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run dev      # Spustí dev server
+npm run build    # Build pre produkciu
+npm run start    # Spustí produkčný server
+npm run lint     # Spustí linter
+npm run format   # Formátuje kód
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 Konfigurácia
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Dáta
 
-## Deploy on Vercel
+Všetky dáta sú uložené v JSON súboroch v `data/` adresári:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `daily-menu.json` - Denné menu
+- `permanent-menu.json` - Stála ponuka
+- `announcements.json` - Aktuality
+- `restaurant-info.json` - Informácie o reštaurácii
+- `reservations.json` - Rezervácie
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Prostredie
+
+Vytvorte `.env.local` súbor:
+
+```
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+```
+
+## 🌐 Deployment
+
+### Vercel (Odporúčané)
+
+1. Pushните kód na GitHub
+2. Prejdite na [vercel.com](https://vercel.com)
+3. Importujte projekt
+4. Vercel automaticky nakonfiguruje a nasadí
+
+### Netlify
+
+Projekt je kompatibilný s Netlify, ale Vercel je odporúčaný pre Next.js.
+
+## 🔐 Admin Panel
+
+Prihláste sa do admin panelu na `/admin/login`
+
+**Prihlasovacie údaje:** (Nastavte si vlastné)
+- Používateľ: admin
+- Heslo: admin
+
+## 📧 Kontakt
+
+- **Email:** sonatka@sonatka.sk
+- **Telefón:** +421-53-44 111 82
+- **Adresa:** Radničné námestie 4, 052 01 Spišská Nová Ves
+
+## 📄 Licencia
+
+MIT License - viď LICENSE súbor
+
+## 👨‍💻 Autor
+
+Vytvorené pre Reštauráciu Sonáta
