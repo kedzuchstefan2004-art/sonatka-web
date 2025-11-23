@@ -1,16 +1,17 @@
 import { NextResponse } from 'next/server';
-import { put, get } from '@vercel/blob';
+import { put, list } from '@vercel/blob';
 import type { Announcement } from '@/lib/types';
 
-const BLOB_KEY = 'data/announcements.json';
+const BLOB_KEY = 'announcements.json';
 
 export async function GET() {
   try {
-    const blob = await get(BLOB_KEY);
-    if (!blob) {
+    const { blobs } = await list({ prefix: BLOB_KEY });
+    if (blobs.length === 0) {
       throw new Error('Blob not found');
     }
-    const data: Announcement[] = JSON.parse(await blob.text());
+    const response = await fetch(blobs[0].url);
+    const data: Announcement[] = await response.json();
     // Return only active announcements for public view
     const activeAnnouncements = data.filter(a => a.active);
     return NextResponse.json(activeAnnouncements);
@@ -24,7 +25,7 @@ export async function POST(request: Request) {
   try {
     const data: Announcement[] = await request.json();
     await put(BLOB_KEY, JSON.stringify(data, null, 2), {
-      access: 'private',
+      access: 'public',
       contentType: 'application/json',
     });
     return NextResponse.json({ success: true });

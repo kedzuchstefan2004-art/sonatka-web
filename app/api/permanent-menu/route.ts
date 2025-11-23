@@ -1,16 +1,17 @@
 import { NextResponse } from 'next/server';
-import { put, get } from '@vercel/blob';
+import { put, list } from '@vercel/blob';
 import type { PermanentMenuItem } from '@/lib/types';
 
-const BLOB_KEY = 'data/permanent-menu.json';
+const BLOB_KEY = 'permanent-menu.json';
 
 export async function GET() {
   try {
-    const blob = await get(BLOB_KEY);
-    if (!blob) {
+    const { blobs } = await list({ prefix: BLOB_KEY });
+    if (blobs.length === 0) {
       throw new Error('Blob not found');
     }
-    const data: PermanentMenuItem[] = JSON.parse(await blob.text());
+    const response = await fetch(blobs[0].url);
+    const data: PermanentMenuItem[] = await response.json();
     return NextResponse.json(data);
   } catch (error) {
     console.error('Error loading permanent menu:', error);
@@ -22,7 +23,7 @@ export async function POST(request: Request) {
   try {
     const data: PermanentMenuItem[] = await request.json();
     await put(BLOB_KEY, JSON.stringify(data, null, 2), {
-      access: 'private',
+      access: 'public',
       contentType: 'application/json',
     });
     return NextResponse.json({ success: true });
