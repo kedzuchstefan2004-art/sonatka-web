@@ -61,7 +61,9 @@ export default function HomeContent() {
     );
   }
 
-  const menuDate = new Date(dailyMenu.date || new Date().toISOString().split('T')[0]);
+  const dateString = dailyMenu.date || new Date().toISOString().split('T')[0];
+  const [year, month, day] = dateString.split('-').map(Number);
+  const menuDate = new Date(year, month - 1, day);
   const formattedDate = menuDate.toLocaleDateString('sk-SK', { 
     weekday: 'long', 
     year: 'numeric', 
