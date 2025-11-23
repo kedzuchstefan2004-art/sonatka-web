@@ -1,33 +1,33 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MenuCard from '@/components/MenuCard';
 import ScrollToTop from '@/components/ScrollToTop';
 import type { PermanentMenuItem } from '@/lib/types';
 
-async function getPermanentMenu(): Promise<PermanentMenuItem[]> {
-  try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-    const res = await fetch(`${baseUrl}/api/permanent-menu`, {
-      cache: 'no-store',
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    });
-    
-    if (!res.ok) {
-      console.error('Failed to fetch permanent menu:', res.status);
-      return [];
-    }
-    
-    return res.json();
-  } catch (error) {
-    console.error('Error fetching permanent menu:', error);
-    return [];
-  }
-}
+export default function StalaPonuka() {
+  const [menu, setMenu] = useState<PermanentMenuItem[]>([]);
+  const [loading, setLoading] = useState(true);
 
-export default async function StalaPonuka() {
-  const menu = await getPermanentMenu();
+  useEffect(() => {
+    const fetchMenu = async () => {
+      try {
+        const res = await fetch('/api/permanent-menu');
+        if (res.ok) {
+          const data = await res.json();
+          setMenu(data);
+        }
+      } catch (error) {
+        console.error('Error fetching permanent menu:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMenu();
+  }, []);
 
   // Group items by category
   const groupedItems = menu.reduce((acc, item) => {
