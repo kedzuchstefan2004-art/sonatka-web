@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { supabaseServer } from '@/lib/supabase';
 import type { PermanentMenuItem } from '@/lib/types';
 
 const defaultMenu: PermanentMenuItem[] = [
@@ -81,18 +82,37 @@ const defaultMenu: PermanentMenuItem[] = [
 
 export async function GET() {
   try {
-    return NextResponse.json(defaultMenu);
+    const { data, error } = await supabaseServer
+      .from('permanent_menu')
+      .select('*');
+
+    if (error) {
+      console.error('Error loading permanent menu from DB:', error);
+      return NextResponse.json(defaultMenu);
+    }
+
+    return NextResponse.json(data || defaultMenu);
   } catch (error) {
-    console.error('Error loading permanent menu:', error);
-    return NextResponse.json([]);
+    console.error('Error fetching permanent menu:', error);
+    return NextResponse.json(defaultMenu);
   }
 }
 
 export async function POST(request: Request) {
   try {
     const data: PermanentMenuItem[] = await request.json();
-    // On Vercel, we can't write to files, so just return success
-    console.log('Permanent menu updated (stored in memory):', data);
+
+    const { error } = await supabaseServer
+      .from('permanent_menu')
+      .delete()
+      .neq('id', '');
+
+    if (!error) {
+      await supabaseServer
+        .from('permanent_menu')
+        .insert(data);
+    }
+
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Error saving permanent menu:', error);
