@@ -2,91 +2,128 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  * {
-    @apply m-0 p-0 box-border;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  html {
-    @apply scroll-smooth;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  body {
-    @apply bg-gray-50 text-gray-900 font-sans leading-relaxed;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
+body {
+  background-color: #f9fafb;
+  color: #111827;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
 
-  h1 {
-    @apply text-5xl font-bold;
-  }
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
 
-  h2 {
-    @apply text-4xl font-bold;
-  }
+h2 {
+  font-size: 2.25rem;
+  font-weight: bold;
+}
 
-  h3 {
-    @apply text-3xl font-bold;
-  }
+h3 {
+  font-size: 1.875rem;
+  font-weight: bold;
+}
 
-  h4, h5, h6 {
-    @apply font-bold;
-  }
+h4, h5, h6 {
+  font-weight: bold;
+}
 
-  a {
-    @apply transition-colors duration-300;
-  }
+a {
+  transition: color 0.3s ease;
+}
 
-  button {
-    @apply transition-all duration-300;
-  }
+button {
+  transition: all 0.3s ease;
+}
 
-  input, textarea, select {
-    @apply transition-colors duration-300;
-  }
+input, textarea, select {
+  transition: color 0.3s ease;
 }
 
 @layer components {
   .container {
-    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .btn {
-    @apply px-4 py-2 rounded-lg font-semibold transition-all duration-300;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
   }
 
   .btn-primary {
-    @apply btn bg-amber-600 text-white hover:bg-amber-700 active:scale-95;
+    background-color: #d97706;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: #b45309;
   }
 
   .btn-secondary {
-    @apply btn bg-gray-200 text-gray-900 hover:bg-gray-300 active:scale-95;
+    background-color: #e5e7eb;
+    color: #111827;
+  }
+
+  .btn-secondary:hover {
+    background-color: #d1d5db;
   }
 
   .card {
-    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   .input {
-    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .input:focus {
+    outline: none;
+    border-color: #d97706;
+    box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
   }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  @apply w-2.5;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100;
+  background: #f3f4f6;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-amber-600 rounded-full hover:bg-amber-700;
+  background: #d97706;
+  border-radius: 5px;
 }
 
-/* Smooth transitions */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: #b45309;
 }
