@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write",
-    "init-blob": "ts-node scripts/init-blob.ts"
+    "init-blob": "node scripts/init-blob.js"
   },
   "dependencies": {
     "@vercel/blob": "^2.0.0",
