@@ -1,14 +1,16 @@
 import { NextResponse } from 'next/server';
-import { promises as fs } from 'fs';
-import path from 'path';
+import { put, get } from '@vercel/blob';
 import type { Reservation } from '@/lib/types';
 
-const dataPath = path.join(process.cwd(), 'data', 'reservations.json');
+const BLOB_KEY = 'data/reservations.json';
 
 export async function GET() {
   try {
-    const fileContents = await fs.readFile(dataPath, 'utf8');
-    const data: Reservation[] = JSON.parse(fileContents);
+    const blob = await get(BLOB_KEY);
+    if (!blob) {
+      throw new Error('Blob not found');
+    }
+    const data: Reservation[] = JSON.parse(await blob.text());
     return NextResponse.json(data);
   } catch (error) {
     console.error('Error loading reservations:', error);
@@ -22,13 +24,19 @@ export async function POST(request: Request) {
     
     // If it's an array, it's an update from admin
     if (Array.isArray(body)) {
-      await fs.writeFile(dataPath, JSON.stringify(body, null, 2), 'utf8');
+      await put(BLOB_KEY, JSON.stringify(body, null, 2), {
+        access: 'private',
+        contentType: 'application/json',
+      });
       return NextResponse.json({ success: true });
     }
     
     // Otherwise, it's a new reservation
-    const fileContents = await fs.readFile(dataPath, 'utf8');
-    const reservations: Reservation[] = JSON.parse(fileContents);
+    const blob = await get(BLOB_KEY);
+    let reservations: Reservation[] = [];
+    if (blob) {
+      reservations = JSON.parse(await blob.text());
+    }
     
     const newReservation: Reservation = {
       ...body,
@@ -38,14 +46,16 @@ export async function POST(request: Request) {
     };
     
     reservations.push(newReservation);
-    await fs.writeFile(dataPath, JSON.stringify(reservations, null, 2), 'utf8');
+    await put(BLOB_KEY, JSON.stringify(reservations, null, 2), {
+      access: 'private',
+      contentType: 'application/json',
+    });
     
-    // Here you would send email notification
-    // For now, we'll just log it
     console.log('New reservation:', newReservation);
     
     return NextResponse.json({ success: true, reservation: newReservation });
   } catch (error) {
+    console.error('Error saving reservation:', error);
     return NextResponse.json({ error: 'Failed to save reservation' }, { status: 500 });
   }
 }
