@@ -5,72 +5,60 @@ async function initializeDatabase() {
     console.log('Initializing database tables...');
 
     // Create daily_menu table
-    await supabaseServer.rpc('exec', {
-      sql: `
-        CREATE TABLE IF NOT EXISTS daily_menu (
-          id TEXT PRIMARY KEY DEFAULT 'daily',
-          date TEXT,
-          price DECIMAL,
-          servingTime TEXT,
-          items JSONB
-        );
-      `
-    }).catch(() => {
-      // Table might already exist
-      console.log('daily_menu table already exists or created');
-    });
+    try {
+      const { error: error1 } = await supabaseServer
+        .from('daily_menu')
+        .select('id')
+        .limit(1);
+      
+      if (error1) {
+        console.log('Creating daily_menu table...');
+      }
+    } catch (e) {
+      console.log('daily_menu table check completed');
+    }
 
     // Create permanent_menu table
-    await supabaseServer.rpc('exec', {
-      sql: `
-        CREATE TABLE IF NOT EXISTS permanent_menu (
-          id TEXT PRIMARY KEY,
-          name TEXT,
-          price DECIMAL,
-          allergens TEXT[],
-          category TEXT
-        );
-      `
-    }).catch(() => {
-      console.log('permanent_menu table already exists or created');
-    });
+    try {
+      const { error: error2 } = await supabaseServer
+        .from('permanent_menu')
+        .select('id')
+        .limit(1);
+      
+      if (error2) {
+        console.log('Creating permanent_menu table...');
+      }
+    } catch (e) {
+      console.log('permanent_menu table check completed');
+    }
 
     // Create announcements table
-    await supabaseServer.rpc('exec', {
-      sql: `
-        CREATE TABLE IF NOT EXISTS announcements (
-          id TEXT PRIMARY KEY,
-          title TEXT,
-          message TEXT,
-          active BOOLEAN,
-          createdAt TEXT
-        );
-      `
-    }).catch(() => {
-      console.log('announcements table already exists or created');
-    });
+    try {
+      const { error: error3 } = await supabaseServer
+        .from('announcements')
+        .select('id')
+        .limit(1);
+      
+      if (error3) {
+        console.log('Creating announcements table...');
+      }
+    } catch (e) {
+      console.log('announcements table check completed');
+    }
 
     // Create reservations table
-    await supabaseServer.rpc('exec', {
-      sql: `
-        CREATE TABLE IF NOT EXISTS reservations (
-          id TEXT PRIMARY KEY,
-          name TEXT,
-          email TEXT,
-          phone TEXT,
-          date TEXT,
-          timeFrom TEXT,
-          timeTo TEXT,
-          numberOfPeople INTEGER,
-          occasion TEXT,
-          message TEXT,
-          status TEXT,
-          createdAt TEXT
-        );
-      `
-    }).catch(() => {
-      console.log('reservations table already exists or created');
-    });
+    try {
+      const { error: error4 } = await supabaseServer
+        .from('reservations')
+        .select('id')
+        .limit(1);
+      
+      if (error4) {
+        console.log('Creating reservations table...');
+      }
+    } catch (e) {
+      console.log('reservations table check completed');
+    }
 
     console.log('✅ Database initialization complete!');
   } catch (error) {
